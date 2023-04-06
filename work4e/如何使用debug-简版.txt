@@ -1,0 +1,15 @@
+debug 过程的两种状态：运行（running），暂停（is debugging）
+
+断点，用于指定debugger暂停的代码位置。
+
+Step Over(F8) 可以一步一步运行。让代码从这一行的暂停状态跳转到下一行的暂停状态中。
+
+resume就可以让程序从暂停状态，重新进入运行状态。
+每一次点击resume都会运行到下一个断点处。
+
+如果想直接结束，取消所有断点，随后resume。
+
+
+# 如果在bing.com中搜索pycharm debug怎么用，会得到一些更为完善的教程，比如：
+https://zhuanlan.zhihu.com/p/62610785
+如果有需求的同学可以进一步探索。
