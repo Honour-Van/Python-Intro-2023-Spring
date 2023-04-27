@@ -1,0 +1,71 @@
+\usepackage{graphicx}
+\usepackage{authblk}
+\usepackage{subfigure}
+\usepackage[headheight=12.64723pt]{geometry}
+\geometry{a4paper, centering, scale = 0.8}
+\usepackage[format = hang, font = small, textfont = it]{caption}
+\usepackage{fancyhdr}
+\usepackage{caption}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{epstopdf}
+\usepackage{fontspec}
+\usepackage{color}
+\usepackage{xcolor}
+\setmonofont{Consolas}
+
+\usepackage{pifont}
+\usepackage{extarrows}
+\usepackage{harpoon}
+\usepackage{bm}
+\usepackage{esint}
+
+\usepackage{listings}
+\usepackage{enumerate}
+
+\usepackage{makecell}
+\usepackage{appendix}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+    citecolor=cyan,
+}
+\usepackage{media9}
+% \usepackage[numbers,super]{natbib} % it seems that it needs bibliographystyle settings
+\usepackage{apacite}
+\bibliographystyle{apacite}
+\usepackage{enumitem}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+\usepackage{bookmark}
+
+\pagestyle{fancy}
+\lhead{}
+\chead{\leftmark}
+\rhead{\rightmark}
+\lfoot{}
+\cfoot{- \thepage\ -}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\lstset{
+    numbers=left,
+    columns=fixed,
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    basicstyle=\ttfamily,                                      % 在左侧显示行号
+    numberstyle=\tiny\color{gray},                       % 设定行号格式
+    frame=shadowbox,                                          % 不显示背景边框
+    backgroundcolor=\color[RGB]{245,245,244},            % 设定背景颜色
+    keywordstyle=\color[RGB]{40,40,255},                 % 设定关键字颜色
+    numberstyle=\footnotesize\color{darkgray},
+    commentstyle=\it\color[RGB]{0,96,96},                % 设置代码注释的格式
+    stringstyle=\rmfamily\slshape\color[RGB]{128,0,0},   % 设置字符串格式
+    showstringspaces=false,                              % 不显示字符串中的空格
+    language=python                                      % 设置语言
+}

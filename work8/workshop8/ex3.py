@@ -10,15 +10,12 @@ def check(x, y):
 
 def solve_maze(x, y):
     if x == n-1 and y == n-1:
-        maze[x][y] = 2
         return True
     if check(x, y):
-        maze[x][y] = 2
         if solve_maze(x+1, y):
             return True
         if solve_maze(x, y+1):
             return True
-        maze[x][y] = 0
         return False
     return False
 
