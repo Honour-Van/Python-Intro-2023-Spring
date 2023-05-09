@@ -69,7 +69,7 @@ linkcolor=blue
     \begin{tabular}{|c|c|c|c|c|}
         \hline
              & 上月      & 月初 & 月中      & 月末        \\ \hline
-        成熟兔子 & last\_M & M  & M += Y  & last\_M=M \\ \hline
+        成熟兔子 & last\_M & M  & M += last\_Y  & last\_M=M \\ \hline
         幼年兔子 & last\_Y & Y  & last\_Y & last\_Y=Y \\ \hline
         \end{tabular}
 \end{table}
@@ -88,6 +88,7 @@ last_mature = 0
 
 for i in range(n):       # <- 递推关系
     ans = young + mature  # “月初”一共有多少只兔子
+    # 月中兔子的生育和成熟过程
     mature += last_young  # 年轻兔子成熟了（归纳2）
     young = last_mature  # 成熟兔子继续生育（归纳1）
     last_mature = mature # 月末状态继承到下个月
@@ -417,12 +418,12 @@ sorted_records = sorted(records, key=sort_rule)
 这里还值得注意的一点是，sorted函数的排序是稳定的，也就是说，如果两个元素的排序键相同，那么他们的相对顺序不会改变。所以一个多键排序往往可以分成多次单键排序来完成，这样的代码更加简洁，更利于分步调试。
 
 \begin{lstlisting}
-    scores = sorted(scores, key=lambda x: len(x[0]))
+    scores = sorted(name_dict.items(), key=lambda x: len(x[0]))
     scores = sorted(scores, key=lambda x: x[0][0])
-    scores = sorted(name_dict.items(), key=lambda x: -int(x[1]))
+    scores = sorted(scores, key=lambda x: -int(x[1]))
 \end{lstlisting}
 
-注意到分三次排序之后，最后一个排序键在前面，这样就可以以低优先级在整体方案中调整微观的顺序了。想一想，为什么？
+注意到分三次排序之后，最后一个排序键在前面，这样就可以以低优先级在整体方案中调整微观的顺序了。
 
 \subsubsection{数据清洗}
 
